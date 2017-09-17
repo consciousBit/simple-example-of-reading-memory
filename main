@@ -1,0 +1,38 @@
+#include "stdafx.h"
+
+
+using namespace std;
+
+int main()
+{
+	DWORD pid; //double word for process id
+	DWORD address = ; // base pointer address
+	float value = 0;
+	HWND hwnd;
+	hwnd = FindWindow(NULL, _T("League of Legends (TM) Client")); // name of the process (example)
+	if (!hwnd)
+	{
+		cout << "error hwnd\n";
+		cin.get();
+	}
+	else
+	{
+		GetWindowThreadProcessId(hwnd, &pid); // pid threw window caption
+		HANDLE phandle = OpenProcess(PROCESS_VM_READ, 0, pid);
+		if (!phandle)
+		{
+			cout << "error handle\n";
+			cin.get();
+		}
+		else
+		{
+			while (1)
+			{
+				ReadProcessMemory(phandle, (void*)address, &value, sizeof(value), 0); 
+				cout << value << '\n'; // just some example code
+				Sleep(1000); // just some example code
+			}
+			return 0;
+		}
+	}
+}
