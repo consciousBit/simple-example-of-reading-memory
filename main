@@ -5,10 +5,10 @@ using namespace std;
 int main()
 {
 	DWORD pid; //double word for process id
-	DWORD address = ; // just 
+	DWORD address = 0734D6D0; // example 
 	float value = 0;
 	HWND hwnd;
-	hwnd = FindWindow(NULL, _T("League of Legends (TM) Client")); // name of the process (example)
+	hwnd = FindWindow(NULL, _T("Pony Island")); // name of the process (example)
 	if (!hwnd)
 	{
 		cout << "error hwnd\n";
