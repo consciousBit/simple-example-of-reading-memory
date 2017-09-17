@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
 	DWORD pid; //double word for process id
-	DWORD address = ; // base pointer address
+	DWORD address = ; // just 
 	float value = 0;
 	HWND hwnd;
 	hwnd = FindWindow(NULL, _T("League of Legends (TM) Client")); // name of the process (example)
@@ -28,8 +28,8 @@ int main()
 			while (1)
 			{
 				ReadProcessMemory(phandle, (void*)address, &value, sizeof(value), 0); 
-				cout << value << '\n'; // just some example code
-				Sleep(1000); // just some example code
+				cout << value << '\n'; // example
+				Sleep(1000); // example
 			}
 			return 0;
 		}
